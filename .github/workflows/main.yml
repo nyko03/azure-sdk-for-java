@@ -26,9 +26,9 @@ jobs:
       - name: Display diff files
         id: vars
         run: |
-            $a = git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA"
-            $b = $a | select-string ".*.md"
-            echo "::set-env name=FOO::$b"
+            $a = (git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA")
+          # $b = $a | select-string ".*.md"
+          # echo "::set-env name=FOO::$b"
 
       # Runs a set of commands using the runners shell
       - name: Run link verification steps
