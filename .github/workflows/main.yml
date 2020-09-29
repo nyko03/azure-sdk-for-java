@@ -22,8 +22,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Display diff files
+        id: vars
+        shell: bash
         run: |
-          /usr/bin/git diff-tree --no-commit-id --name-only -r $GITHUB_SHA
+          git diff-tree --no-commit-id --name-only -r $github.sha
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
