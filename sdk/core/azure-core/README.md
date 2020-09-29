@@ -22,6 +22,7 @@ APIs in one client library, you will know how to use them in other client librar
 Typically, you won't need to install or depend on Azure Core, instead it will be transitively downloaded by your build
 tool when you depend on client libraries using it.
 
+
 [//]: # ({x-version-update-start;com.azure:azure-core;current})
 ```xml
 <dependency>
