@@ -25,7 +25,9 @@ jobs:
         id: vars
         shell: bash
         run: |
-          git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA"
+          echo "$GITHUB_SHA"
+          git_bash = (git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA")
+          echo "$git_bash"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
