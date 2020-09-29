@@ -21,12 +21,12 @@ jobs:
       - name: Support longpaths
         run: git config --system core.longpaths true
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       # Runs a single command using the runners shell
       - name: Display diff files
         id: vars
         run: |
-            $a = git diff-tree --name-only -r "$GITHUB_SHA"
+            $a = git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA"
           # $b = $a | select-string ".*.md"
           # echo "::set-env name=FOO::$b"
 
