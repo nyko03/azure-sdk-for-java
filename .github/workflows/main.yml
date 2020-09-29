@@ -23,10 +23,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Display diff files
         id: vars
-        uses: azure/powershell@v1
-        with:
-          azPSVersion: '3.1.0'
-          inlineScript: |
+        run: |
             $a = git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA"
             $b = $a | select-string ".*.md"
             echo "::set-env name=FOO::$b"
